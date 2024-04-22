@@ -26,9 +26,12 @@ public class Calculator {
         }catch(ArithmeticException  e){
             System.out.println("Operacion no válida");
             System.out.println("Ingrese un nuevo valor  ");
-            b= scanner.nextInt();
-            repeat = true;
-      
+            try{
+                b= scanner.nextInt();
+            }catch (InputMismatchException ex){
+                repeat = true;
+            }
+            
     
         }catch( InputMismatchException e){
             System.out.println("Tipo de dato no valido");
